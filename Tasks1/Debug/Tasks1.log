@@ -1,0 +1,12 @@
+﻿  Main1.cpp
+  Source.cpp
+D:\Учёба\оаип\Linked list\Tasks1\Source.cpp(27,20): warning C4018: <: несоответствие типов со знаком и без знака
+D:\Учёба\оаип\Linked list\Tasks1\Source.cpp(28,27): warning C4838: Преобразование из "int" в "SHORT" требует сужающего преобразования.
+D:\Учёба\оаип\Linked list\Tasks1\Source.cpp(38,40): warning C4838: Преобразование из "size_t" в "SHORT" требует сужающего преобразования.
+D:\Учёба\оаип\Linked list\Tasks1\Source.cpp(38,44): warning C4267: инициализация: преобразование из "size_t" в "SHORT"; возможна потеря данных
+D:\Учёба\оаип\Linked list\Tasks1\LinkedList.h(327,28): warning C4101: error: неиспользованная локальная переменная
+D:\Учёба\оаип\Linked list\Tasks1\LinkedList.h(319): message : во время компиляции функции-члена класс шаблон "bool List<int>::RemomeAt(int)"
+D:\Учёба\оаип\Linked list\Tasks1\Source.cpp(102): message : выполняется компиляция ссылки на экземпляр шаблон функции "bool List<int>::RemomeAt(int)"
+D:\Учёба\оаип\Linked list\Tasks1\Source.cpp(57): message : выполняется компиляция ссылки на экземпляр класс шаблон функции "List<int>"
+  Создание кода...
+  Tasks1.vcxproj -> D:\Учёба\оаип\Linked list\Debug\Tasks1.exe

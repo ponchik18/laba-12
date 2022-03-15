@@ -1,0 +1,6 @@
+﻿  FUNCTION.cpp
+  MAIN.cpp
+  Stack.h
+  Создание кода...
+D:\Учёба\оаип\LinkedListGit\STACKSYMBOLMAIN\FUNCTION.cpp(55): warning C4172: возвращение адреса локальной или временной переменной : data
+  STACKSYMBOLMAIN.vcxproj -> D:\Учёба\оаип\LinkedListGit\Debug\STACKSYMBOLMAIN.exe

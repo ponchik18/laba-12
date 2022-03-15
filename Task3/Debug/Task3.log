@@ -1,0 +1,12 @@
+﻿  Implementation.cpp
+D:\Учёба\оаип\Linked list\Task3\QueueAndLibrary.h(114,21): warning C4018: <: несоответствие типов со знаком и без знака
+D:\Учёба\оаип\Linked list\Task3\QueueAndLibrary.h(135,21): warning C4018: <: несоответствие типов со знаком и без знака
+D:\Учёба\оаип\Linked list\Task3\Implementation.cpp(204,12): warning C4018: <: несоответствие типов со знаком и без знака
+D:\Учёба\оаип\Linked list\Task3\Implementation.cpp(232,12): warning C4018: <: несоответствие типов со знаком и без знака
+  Main.cpp
+D:\Учёба\оаип\Linked list\Task3\Main.cpp(1,1): warning C4005: _CRT_SECURE_NO_WARNINGS: изменение макроопределения
+D:\Учёба\оаип\Linked list\Task3\Main.cpp : message : см. предыдущее определение "_CRT_SECURE_NO_WARNINGS"
+D:\Учёба\оаип\Linked list\Task3\QueueAndLibrary.h(114,21): warning C4018: <: несоответствие типов со знаком и без знака
+D:\Учёба\оаип\Linked list\Task3\QueueAndLibrary.h(135,21): warning C4018: <: несоответствие типов со знаком и без знака
+  Создание кода...
+  Task3.vcxproj -> D:\Учёба\оаип\Linked list\Debug\Task3.exe

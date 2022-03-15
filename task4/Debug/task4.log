@@ -1,0 +1,14 @@
+﻿  Main.cpp
+D:\Учёба\оаип\Linked list\task4\Main.cpp(1,1): warning C4005: _CRT_SECURE_NO_WARNINGS: изменение макроопределения
+D:\Учёба\оаип\Linked list\task4\Main.cpp : message : см. предыдущее определение "_CRT_SECURE_NO_WARNINGS"
+D:\Учёба\оаип\Linked list\task4\stackAndlibrary.h(114,21): warning C4018: <: несоответствие типов со знаком и без знака
+D:\Учёба\оаип\Linked list\task4\stackAndlibrary.h(135,21): warning C4018: <: несоответствие типов со знаком и без знака
+  sourcecode.cpp
+D:\Учёба\оаип\Linked list\task4\stackAndlibrary.h(114,21): warning C4018: <: несоответствие типов со знаком и без знака
+D:\Учёба\оаип\Linked list\task4\stackAndlibrary.h(135,21): warning C4018: <: несоответствие типов со знаком и без знака
+D:\Учёба\оаип\Linked list\task4\sourcecode.cpp(200,12): warning C4018: <: несоответствие типов со знаком и без знака
+D:\Учёба\оаип\Linked list\task4\sourcecode.cpp(228,12): warning C4018: <: несоответствие типов со знаком и без знака
+  Создание кода...
+D:\Учёба\оаип\Linked list\task4\stackAndlibrary.h(218): warning C4172: возвращение адреса локальной или временной переменной : data
+D:\Учёба\оаип\Linked list\task4\stackAndlibrary.h(218): warning C4172: возвращение адреса локальной или временной переменной : data
+  task4.vcxproj -> D:\Учёба\оаип\Linked list\Debug\task4.exe
