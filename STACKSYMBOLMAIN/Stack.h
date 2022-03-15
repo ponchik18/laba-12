@@ -1,4 +1,4 @@
-#pragma once//начать писать ввод строки
+п»ї#pragma once//РЅР°С‡Р°С‚СЊ РїРёСЃР°С‚СЊ РІРІРѕРґ СЃС‚СЂРѕРєРё
 #include<iostream>
 #include<stdio.h>
 #include<string.h>
@@ -12,7 +12,7 @@
 #define DOWN 80
 #define ENTRY 13
 #define ESC 27
-#define CLEAN system("cls"); // отчистка консоли
+#define CLEAN system("cls"); // РѕС‚С‡РёСЃС‚РєР° РєРѕРЅСЃРѕР»Рё
 #define ClEANCONSOLE cin.clear(); cin.ignore(32767, '\n');
 #define PAUSE system("pause");
 using namespace std;

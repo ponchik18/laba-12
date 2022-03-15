@@ -1,4 +1,4 @@
-#pragma once
+п»ї#pragma once
 #include<iostream>
 #include<stdio.h>
 #include<string.h>
@@ -14,7 +14,7 @@ class List;
 #define DOWN 80
 #define ENTRY 13
 #define ESC 27
-#define CLEAN system("cls"); // отчистка консоли
+#define CLEAN system("cls"); // РѕС‚С‡РёСЃС‚РєР° РєРѕРЅСЃРѕР»Рё
 #define ClEANCONSOLE cin.clear(); cin.ignore(32767, '\n');
 #define PAUSE system("pause");
 using namespace std;
@@ -22,27 +22,27 @@ using namespace std;
 template<typename T>
 T getValue(T& b)
 {
-	while (true) // цикл продолжается до тех пор, пока пользователь не введет корректное значение
+	while (true) // С†РёРєР» РїСЂРѕРґРѕР»Р¶Р°РµС‚СЃСЏ РґРѕ С‚РµС… РїРѕСЂ, РїРѕРєР° РїРѕР»СЊР·РѕРІР°С‚РµР»СЊ РЅРµ РІРІРµРґРµС‚ РєРѕСЂСЂРµРєС‚РЅРѕРµ Р·РЅР°С‡РµРЅРёРµ
 	{
 		cin >> b;
 
-		if (cin.fail()) // если предыдущее извлечение оказалось неудачным,
+		if (cin.fail()) // РµСЃР»Рё РїСЂРµРґС‹РґСѓС‰РµРµ РёР·РІР»РµС‡РµРЅРёРµ РѕРєР°Р·Р°Р»РѕСЃСЊ РЅРµСѓРґР°С‡РЅС‹Рј,
 		{
-			cin.clear(); // то возвращаем cin в 'обычный' режим работы
-			cin.ignore(32767, '\n'); // и удаляем значения предыдущего ввода из входного буфера
-			cout << endl << "Ошибка, попробуйте ещё раз: ";
+			cin.clear(); // С‚Рѕ РІРѕР·РІСЂР°С‰Р°РµРј cin РІ 'РѕР±С‹С‡РЅС‹Р№' СЂРµР¶РёРј СЂР°Р±РѕС‚С‹
+			cin.ignore(32767, '\n'); // Рё СѓРґР°Р»СЏРµРј Р·РЅР°С‡РµРЅРёСЏ РїСЂРµРґС‹РґСѓС‰РµРіРѕ РІРІРѕРґР° РёР· РІС…РѕРґРЅРѕРіРѕ Р±СѓС„РµСЂР°
+			cout << endl << "РћС€РёР±РєР°, РїРѕРїСЂРѕР±СѓР№С‚Рµ РµС‰С‘ СЂР°Р·: ";
 		}
-		else // если всё хорошо, то возвращаем a
+		else // РµСЃР»Рё РІСЃС‘ С…РѕСЂРѕС€Рѕ, С‚Рѕ РІРѕР·РІСЂР°С‰Р°РµРј a
 			return b;
 	}
 }
 class STUDENT {
 public:
-	char* FirstName; // ИМЯ
-	char* LastName; // ФАМИЛИЯ
-	char* Surname; // ОТЧЕСТВО
-	int GroupeNumber; // НОМЕР ГРУППЫ
-	int Marks[5]; // УСПЕВАЕМОСТЬ
+	char* FirstName; // РРњРЇ
+	char* LastName; // Р¤РђРњРР›РРЇ
+	char* Surname; // РћРўР§Р•РЎРўР’Рћ
+	int GroupeNumber; // РќРћРњР•Р  Р“Р РЈРџРџР«
+	int Marks[5]; // РЈРЎРџР•Р’РђР•РњРћРЎРўР¬
 
 	STUDENT(const char* fn = "None", const char* ln = "None", const char* sn = "None", int g = 0, int* m = 0) {
 		FirstName = new char[strlen(fn) + 1];
@@ -145,7 +145,7 @@ public:
 		cout.width(20);
 		cout << Marks[0] << ", " << Marks[1] << ", " << Marks[2] << ", " << Marks[3] << ", " << Marks[4] << ". " << endl;
 	}
-}; // Структура студент
+}; // РЎС‚СЂСѓРєС‚СѓСЂР° СЃС‚СѓРґРµРЅС‚
 extern HANDLE hStdOut;
 //bool Alpahabet(STUDENT d1,STUDENT d2) {
 //	if (strcmp(d1.LastName, d2.LastName) != 1)

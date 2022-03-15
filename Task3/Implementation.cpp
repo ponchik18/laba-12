@@ -1,9 +1,9 @@
-#include"QueueAndLibrary.h"
-extern HANDLE hStdOut = GetStdHandle(STD_OUTPUT_HANDLE); // Получаем дескриптор консоли
+п»ї#include"QueueAndLibrary.h"
+extern HANDLE hStdOut = GetStdHandle(STD_OUTPUT_HANDLE); // РџРѕР»СѓС‡Р°РµРј РґРµСЃРєСЂРёРїС‚РѕСЂ РєРѕРЅСЃРѕР»Рё
 static int ActiveMenu = 4;
 
 
-//////////// Функции для меню
+//////////// Р¤СѓРЅРєС†РёРё РґР»СЏ РјРµРЅСЋ
 static char* CoutString() {
 
 	char c;
@@ -27,11 +27,11 @@ static char* CoutString() {
 static void InfoClassification() {
 	CLEAN
 		cout.width(30);
-	cout << "Фамилия и Инициалы";
+	cout << "Р¤Р°РјРёР»РёСЏ Рё РРЅРёС†РёР°Р»С‹";
 	cout.width(24);
-	cout << "Номер группы";
+	cout << "РќРѕРјРµСЂ РіСЂСѓРїРїС‹";
 	cout.width(29);
-	cout << "5 оценок студента" << endl;
+	cout << "5 РѕС†РµРЅРѕРє СЃС‚СѓРґРµРЅС‚Р°" << endl;
 	for (register int i = 0; i < 85; i++)
 		cout << "_";
 	cout << endl;
@@ -67,7 +67,7 @@ extern void pointer(Queue<STUDENT>& queueStudent) {
 	char ch;
 	ch = _getch();
 	STUDENT first;
-	if (ch == -32) ch = _getch(); // Отлавливаем стрелочки
+	if (ch == -32) ch = _getch(); // РћС‚Р»Р°РІР»РёРІР°РµРј СЃС‚СЂРµР»РѕС‡РєРё
 	switch (ch)
 	{
 	case ESC:
@@ -91,7 +91,7 @@ extern void pointer(Queue<STUDENT>& queueStudent) {
 		case 5:
 			CLEAN
 				if (queueStudent.isEmpty()) {
-					cout << "В очереди никого нет;" << endl;
+					cout << "Р’ РѕС‡РµСЂРµРґРё РЅРёРєРѕРіРѕ РЅРµС‚;" << endl;
 					PAUSE
 					return;
 				}
@@ -101,27 +101,27 @@ extern void pointer(Queue<STUDENT>& queueStudent) {
 		case 6:
 			CLEAN
 				if (queueStudent.isEmpty()) {
-					cout << "В очереди никого нет!" << endl;
+					cout << "Р’ РѕС‡РµСЂРµРґРё РЅРёРєРѕРіРѕ РЅРµС‚!" << endl;
 					PAUSE
 					return;
 				}
 				first = queueStudent.front();
 				InfoClassification();
 				first.Info();
-				cout << endl << "Данный студент извлечён из очереди" << endl;
+				cout << endl << "Р”Р°РЅРЅС‹Р№ СЃС‚СѓРґРµРЅС‚ РёР·РІР»РµС‡С‘РЅ РёР· РѕС‡РµСЂРµРґРё" << endl;
 				queueStudent.Delete();
 			PAUSE
 				break;
 		case 7:
 			CLEAN
 				queueStudent.initialize();
-			cout << "Очередь отчищена!" << endl;
+			cout << "РћС‡РµСЂРµРґСЊ РѕС‚С‡РёС‰РµРЅР°!" << endl;
 			PAUSE
 				break;
 		case 8:
 			CLEAN
 
-			cout << "Количество студентов в очереди: "<<queueStudent.GetSize() << endl;
+			cout << "РљРѕР»РёС‡РµСЃС‚РІРѕ СЃС‚СѓРґРµРЅС‚РѕРІ РІ РѕС‡РµСЂРµРґРё: "<<queueStudent.GetSize() << endl;
 			PAUSE
 				break;
 		case 9:
@@ -144,42 +144,42 @@ extern void pointer(Queue<STUDENT>& queueStudent) {
 	}
 }
 extern void menu() {
-	int n = 4; // для перехода по строкам меню
+	int n = 4; // РґР»СЏ РїРµСЂРµС…РѕРґР° РїРѕ СЃС‚СЂРѕРєР°Рј РјРµРЅСЋ
 	//////////
 	CLEAN
 		cout << "+-----------------------------------------------------------------------------------------+" << endl << "|";
 	cout.width(50);
-	cout << "Меню";
+	cout << "РњРµРЅСЋ";
 	cout.setf(ios::right);
 	cout.width(40);
 	cout << "|" << endl;
 	cout << "+-----------------------------------------------------------------------------------------+" << endl;
 	GotoY(n);
 	ConsoleTextColor(n);
-	cout << "1. Ввод данных о студенте с клавитуре;" << endl;
+	cout << "1. Р’РІРѕРґ РґР°РЅРЅС‹С… Рѕ СЃС‚СѓРґРµРЅС‚Рµ СЃ РєР»Р°РІРёС‚СѓСЂРµ;" << endl;
 	GotoY(n);
 	ConsoleTextColor(n);
-	cout << "2. Вывод данных о студентах;" << endl;
+	cout << "2. Р’С‹РІРѕРґ РґР°РЅРЅС‹С… Рѕ СЃС‚СѓРґРµРЅС‚Р°С…;" << endl;
 	GotoY(n);
 	ConsoleTextColor(n);
-	cout << "3. Извлечь из очереди одного студента;" << endl;
+	cout << "3. РР·РІР»РµС‡СЊ РёР· РѕС‡РµСЂРµРґРё РѕРґРЅРѕРіРѕ СЃС‚СѓРґРµРЅС‚Р°;" << endl;
 	GotoY(n);
 	ConsoleTextColor(n);
-	cout << "4. Отчистить очередь;" << endl;
+	cout << "4. РћС‚С‡РёСЃС‚РёС‚СЊ РѕС‡РµСЂРµРґСЊ;" << endl;
 	GotoY(n);
 	ConsoleTextColor(n);
-	cout << "5. Количество студентов в очереди" << endl;
+	cout << "5. РљРѕР»РёС‡РµСЃС‚РІРѕ СЃС‚СѓРґРµРЅС‚РѕРІ РІ РѕС‡РµСЂРµРґРё" << endl;
 	GotoY(n);
 	ConsoleTextColor(n);
-	cout << "6. Прочитать данные с файла" << endl;
+	cout << "6. РџСЂРѕС‡РёС‚Р°С‚СЊ РґР°РЅРЅС‹Рµ СЃ С„Р°Р№Р»Р°" << endl;
 	GotoY(n);
 	ConsoleTextColor(n);
-	cout << "7. Записать данные с файла" << endl;
+	cout << "7. Р—Р°РїРёСЃР°С‚СЊ РґР°РЅРЅС‹Рµ СЃ С„Р°Р№Р»Р°" << endl;
 
 	SetConsoleTextAttribute(hStdOut, FOREGROUND_RED | FOREGROUND_INTENSITY);
 }
 
-///////////// Вспомогательные функции
+///////////// Р’СЃРїРѕРјРѕРіР°С‚РµР»СЊРЅС‹Рµ С„СѓРЅРєС†РёРё
 
 
 static char* FindEndSymbol(char* str, int s) {
@@ -218,7 +218,7 @@ static bool FileExtension(char* str, int* s) {
 }
 static char* AddExtension(char* str) {
 	int i = 0;
-	if (FileExtension(str, &i) == true) { // стрираем всё что находится после '.' и её тоже 
+	if (FileExtension(str, &i) == true) { // СЃС‚СЂРёСЂР°РµРј РІСЃС‘ С‡С‚Рѕ РЅР°С…РѕРґРёС‚СЃСЏ РїРѕСЃР»Рµ '.' Рё РµС‘ С‚РѕР¶Рµ 
 		char* tmp = new char[i + 1];
 		for (int j = 0; j < i; j++) {
 			tmp[j] = str[j];
@@ -241,22 +241,22 @@ static char* AddExtension(char* str) {
 	str = tmp;
 	return str;
 }
-//////////////// основные функции
+//////////////// РѕСЃРЅРѕРІРЅС‹Рµ С„СѓРЅРєС†РёРё
 
 extern void CinInfoAboutStudent(Queue<STUDENT>& quequStudent) {
 	STUDENT undergraduate;
 	/// <summary>
 	/// /
 	/// </summary>
-	cout << "Введите фамилию " << quequStudent.GetSize() + 1 << "-ого студента: " << endl;
+	cout << "Р’РІРµРґРёС‚Рµ С„Р°РјРёР»РёСЋ " << quequStudent.GetSize() + 1 << "-РѕРіРѕ СЃС‚СѓРґРµРЅС‚Р°: " << endl;
 	undergraduate.LastName = CoutString();
-	cout << "Введите имя " << quequStudent.GetSize() + 1 << "-ого студента: " << endl;
+	cout << "Р’РІРµРґРёС‚Рµ РёРјСЏ " << quequStudent.GetSize() + 1 << "-РѕРіРѕ СЃС‚СѓРґРµРЅС‚Р°: " << endl;
 	undergraduate.FirstName = CoutString();
-	cout << "Введите отчество " << quequStudent.GetSize() + 1 << "-ого студента: " << endl;
+	cout << "Р’РІРµРґРёС‚Рµ РѕС‚С‡РµСЃС‚РІРѕ " << quequStudent.GetSize() + 1 << "-РѕРіРѕ СЃС‚СѓРґРµРЅС‚Р°: " << endl;
 	undergraduate.Surname = CoutString();
-	cout << "Введите группу " << quequStudent.GetSize() + 1 << "-ого студента: " << endl;
+	cout << "Р’РІРµРґРёС‚Рµ РіСЂСѓРїРїСѓ " << quequStudent.GetSize() + 1 << "-РѕРіРѕ СЃС‚СѓРґРµРЅС‚Р°: " << endl;
 	undergraduate.GroupeNumber = getValue(undergraduate.GroupeNumber);
-	cout << "Введите 5 оценок " << quequStudent.GetSize() + 1 << "-ого студента: " << endl;
+	cout << "Р’РІРµРґРёС‚Рµ 5 РѕС†РµРЅРѕРє " << quequStudent.GetSize() + 1 << "-РѕРіРѕ СЃС‚СѓРґРµРЅС‚Р°: " << endl;
 	for (register short unsigned i = 0; i < 5; i++) {
 		cout << "\t" << i + 1 << ": ";
 		undergraduate.Marks[i] = getValue(undergraduate.Marks[i]);
@@ -265,7 +265,7 @@ extern void CinInfoAboutStudent(Queue<STUDENT>& quequStudent) {
 }
 extern void PrintInfoAboutStudent(Queue<STUDENT>& quequStudent) {
 	if (quequStudent.GetSize() == 0) {
-		cout << "Сначало нужно ввести данные" << endl;
+		cout << "РЎРЅР°С‡Р°Р»Рѕ РЅСѓР¶РЅРѕ РІРІРµСЃС‚Рё РґР°РЅРЅС‹Рµ" << endl;
 		return;
 	}
 	InfoClassification();
@@ -278,17 +278,17 @@ extern void WriteInfoInFile(Queue<STUDENT>& quequStudent) {
 
 	int CountStudent = quequStudent.GetSize();
 	if (CountStudent == 0) {
-		cout << "Сначало нужно ввести данные" << endl;
+		cout << "РЎРЅР°С‡Р°Р»Рѕ РЅСѓР¶РЅРѕ РІРІРµСЃС‚Рё РґР°РЅРЅС‹Рµ" << endl;
 		return;
 	}
-	cout << "Введите название файла(можно без расширения)" << endl;
+	cout << "Р’РІРµРґРёС‚Рµ РЅР°Р·РІР°РЅРёРµ С„Р°Р№Р»Р°(РјРѕР¶РЅРѕ Р±РµР· СЂР°СЃС€РёСЂРµРЅРёСЏ)" << endl;
 	char* str = CoutString();
 	str = AddExtension(str);
 	quequStudent.PrintInFile(str);
 
 }
 extern void ReadInfoFromFile(Queue<STUDENT>& quequStudent) {
-	cout << "Введите название файла(можно без расширения)" << endl;
+	cout << "Р’РІРµРґРёС‚Рµ РЅР°Р·РІР°РЅРёРµ С„Р°Р№Р»Р°(РјРѕР¶РЅРѕ Р±РµР· СЂР°СЃС€РёСЂРµРЅРёСЏ)" << endl;
 	char* str = CoutString();
 	str = AddExtension(str);
 	quequStudent.ReadFromFile(str);

@@ -1,5 +1,5 @@
-#include"Stack.h"
-extern HANDLE hStdOut = GetStdHandle(STD_OUTPUT_HANDLE); // Получаем дескриптор консоли
+п»ї#include"Stack.h"
+extern HANDLE hStdOut = GetStdHandle(STD_OUTPUT_HANDLE); // РџРѕР»СѓС‡Р°РµРј РґРµСЃРєСЂРёРїС‚РѕСЂ РєРѕРЅСЃРѕР»Рё
 static int ActiveMenu = 4;
 
 static void GotoY(short y, short x = 25) {
@@ -82,7 +82,7 @@ void Stack::initializeStack()
 void Stack::print() const
 {
 	if (Top == nullptr) {
-		std::cout << "Стек пуст, невозможен вывод!" << endl;
+		std::cout << "РЎС‚РµРє РїСѓСЃС‚, РЅРµРІРѕР·РјРѕР¶РµРЅ РІС‹РІРѕРґ!" << endl;
 	}
 	Node* current = this->Top;
 	while (current != nullptr) {
@@ -152,7 +152,7 @@ extern void pointer(Stack & symbols) {
 	char ch;
 	ch = _getch();
 
-	if (ch == -32) ch = _getch(); // Отлавливаем стрелочки
+	if (ch == -32) ch = _getch(); // РћС‚Р»Р°РІР»РёРІР°РµРј СЃС‚СЂРµР»РѕС‡РєРё
 	switch (ch)
 	{
 	case ESC:
@@ -169,23 +169,23 @@ extern void pointer(Stack & symbols) {
 		switch (ActiveMenu) {
 		case 4:
 			CLEAN
-				std::cout << "Можете вводить строку: ";
+				std::cout << "РњРѕР¶РµС‚Рµ РІРІРѕРґРёС‚СЊ СЃС‚СЂРѕРєСѓ: ";
 				symbols.CoutString();
 			std::cout << endl;
-			std::cout << "Ввод завершён!"<<std::endl;
+			std::cout << "Р’РІРѕРґ Р·Р°РІРµСЂС€С‘РЅ!"<<std::endl;
 				PAUSE
 				break;
 		case 5:
 			CLEAN
 				symbols.print();
 				std::cout << endl;
-				std::cout << "Вывод завершён!"<<std::endl;
+				std::cout << "Р’С‹РІРѕРґ Р·Р°РІРµСЂС€С‘РЅ!"<<std::endl;
 			PAUSE
 				break;
 		case 6:
 			CLEAN
 
-				std::cout << "Введите эталонный символ: ";
+				std::cout << "Р’РІРµРґРёС‚Рµ СЌС‚Р°Р»РѕРЅРЅС‹Р№ СЃРёРјРІРѕР»: ";
 				ch = cin.get();
 				symbols.setEtalon(ch);
 			PAUSE
@@ -193,21 +193,21 @@ extern void pointer(Stack & symbols) {
 		case 7:
 			CLEAN
 				symbols.initializeStack();
-				std::cout<<"Стек символов отчищен!"<<endl;
+				std::cout<<"РЎС‚РµРє СЃРёРјРІРѕР»РѕРІ РѕС‚С‡РёС‰РµРЅ!"<<endl;
 			PAUSE
 				break;
 		case 8:
 			CLEAN
-				std::cout << "Количество символов в стеке равно: " << symbols.GetSize() << std::endl;
+				std::cout << "РљРѕР»РёС‡РµСЃС‚РІРѕ СЃРёРјРІРѕР»РѕРІ РІ СЃС‚РµРєРµ СЂР°РІРЅРѕ: " << symbols.GetSize() << std::endl;
 			PAUSE
 				break;
 		case 9:
 			CLEAN
 				if (symbols.IsEmpy()) {
-					std::cout << "Стек пуст!" << std::endl;
+					std::cout << "РЎС‚РµРє РїСѓСЃС‚!" << std::endl;
 				}
 				else
-					std::cout << "В стеке есть елементы!" << std::endl;
+					std::cout << "Р’ СЃС‚РµРєРµ РµСЃС‚СЊ РµР»РµРјРµРЅС‚С‹!" << std::endl;
 			PAUSE
 				break;
 
@@ -219,34 +219,34 @@ extern void pointer(Stack & symbols) {
 	}
 }
 extern void menu() {
-	int n = 4; // для перехода по строкам меню
+	int n = 4; // РґР»СЏ РїРµСЂРµС…РѕРґР° РїРѕ СЃС‚СЂРѕРєР°Рј РјРµРЅСЋ
 	//////////
 	CLEAN
 		cout << "+-----------------------------------------------------------------------------------------+" << endl << "|";
 	cout.width(50);
-	cout << "Меню";
+	cout << "РњРµРЅСЋ";
 	cout.setf(ios::right);
 	cout.width(40);
 	cout << "|" << endl;
 	cout << "+-----------------------------------------------------------------------------------------+" << endl;
 	GotoY(n);
 	ConsoleTextColor(n);
-	cout << "1. Ввод до эталонного символа(По умолчанию равен '/n');" << endl;
+	cout << "1. Р’РІРѕРґ РґРѕ СЌС‚Р°Р»РѕРЅРЅРѕРіРѕ СЃРёРјРІРѕР»Р°(РџРѕ СѓРјРѕР»С‡Р°РЅРёСЋ СЂР°РІРµРЅ '/n');" << endl;
 	GotoY(n);
 	ConsoleTextColor(n);
-	cout << "2. Вывод строки;" << endl;
+	cout << "2. Р’С‹РІРѕРґ СЃС‚СЂРѕРєРё;" << endl;
 	GotoY(n);
 	ConsoleTextColor(n);
-	cout << "3. Изменить эталонный символ;" << endl;
+	cout << "3. РР·РјРµРЅРёС‚СЊ СЌС‚Р°Р»РѕРЅРЅС‹Р№ СЃРёРјРІРѕР»;" << endl;
 	GotoY(n);
 	ConsoleTextColor(n);
-	cout << "4. Отчистить строку(эталонный символ не меняется);" << endl;
+	cout << "4. РћС‚С‡РёСЃС‚РёС‚СЊ СЃС‚СЂРѕРєСѓ(СЌС‚Р°Р»РѕРЅРЅС‹Р№ СЃРёРјРІРѕР» РЅРµ РјРµРЅСЏРµС‚СЃСЏ);" << endl;
 	GotoY(n);
 	ConsoleTextColor(n);
-	cout << "5. Количество символов в стеке строк" << endl;
+	cout << "5. РљРѕР»РёС‡РµСЃС‚РІРѕ СЃРёРјРІРѕР»РѕРІ РІ СЃС‚РµРєРµ СЃС‚СЂРѕРє" << endl;
 	GotoY(n);
 	ConsoleTextColor(n);
-	cout << "6. Пустой ли стек?" << endl;
+	cout << "6. РџСѓСЃС‚РѕР№ Р»Рё СЃС‚РµРє?" << endl;
 
 	SetConsoleTextAttribute(hStdOut, FOREGROUND_RED | FOREGROUND_INTENSITY);
 }

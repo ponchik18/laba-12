@@ -1,9 +1,9 @@
-#include"stackAndlibrary.h"
-extern HANDLE hStdOut = GetStdHandle(STD_OUTPUT_HANDLE); // Получаем дескриптор консоли
+п»ї#include"stackAndlibrary.h"
+extern HANDLE hStdOut = GetStdHandle(STD_OUTPUT_HANDLE); // РџРѕР»СѓС‡Р°РµРј РґРµСЃРєСЂРёРїС‚РѕСЂ РєРѕРЅСЃРѕР»Рё
 static int ActiveMenu = 4;
 
 
-//////////// Функции для меню
+//////////// Р¤СѓРЅРєС†РёРё РґР»СЏ РјРµРЅСЋ
 static char* CoutString() {
 
 	char c;
@@ -27,11 +27,11 @@ static char* CoutString() {
 static void InfoClassification() {
 	CLEAN
 		cout.width(30);
-	cout << "Фамилия и Инициалы";
+	cout << "Р¤Р°РјРёР»РёСЏ Рё РРЅРёС†РёР°Р»С‹";
 	cout.width(24);
-	cout << "Номер группы";
+	cout << "РќРѕРјРµСЂ РіСЂСѓРїРїС‹";
 	cout.width(29);
-	cout << "5 оценок студента" << endl;
+	cout << "5 РѕС†РµРЅРѕРє СЃС‚СѓРґРµРЅС‚Р°" << endl;
 	for (register int i = 0; i < 85; i++)
 		cout << "_";
 	cout << endl;
@@ -67,7 +67,7 @@ extern void pointer(Stack<STUDENT>& stackStudent) {
 	char ch;
 	ch = _getch();
 	STUDENT first;
-	if (ch == -32) ch = _getch(); // Отлавливаем стрелочки
+	if (ch == -32) ch = _getch(); // РћС‚Р»Р°РІР»РёРІР°РµРј СЃС‚СЂРµР»РѕС‡РєРё
 	switch (ch)
 	{
 	case ESC:
@@ -97,27 +97,27 @@ extern void pointer(Stack<STUDENT>& stackStudent) {
 		case 6:
 			CLEAN
 				if (stackStudent.IsEmpy()) {
-					cout << "В стеке никого нет!" << endl;
+					cout << "Р’ СЃС‚РµРєРµ РЅРёРєРѕРіРѕ РЅРµС‚!" << endl;
 					PAUSE
 						return;
 				}
 			first = stackStudent.TopElement();
 			InfoClassification();
 			first.Info();
-			cout << endl << "Данный студент извлечён из стека" << endl;
+			cout << endl << "Р”Р°РЅРЅС‹Р№ СЃС‚СѓРґРµРЅС‚ РёР·РІР»РµС‡С‘РЅ РёР· СЃС‚РµРєР°" << endl;
 			stackStudent.Pop();
 			PAUSE
 				break;
 		case 7:
 			CLEAN
 				stackStudent.initializeStack();
-			cout << "Стек отчистен!" << endl;
+			cout << "РЎС‚РµРє РѕС‚С‡РёСЃС‚РµРЅ!" << endl;
 			PAUSE
 				break;
 		case 8:
 			CLEAN
 
-				cout << "Количество студентов в стеке: " << stackStudent.GetSize() << endl;
+				cout << "РљРѕР»РёС‡РµСЃС‚РІРѕ СЃС‚СѓРґРµРЅС‚РѕРІ РІ СЃС‚РµРєРµ: " << stackStudent.GetSize() << endl;
 			PAUSE
 				break;
 		case 9:
@@ -140,42 +140,42 @@ extern void pointer(Stack<STUDENT>& stackStudent) {
 	}
 }
 extern void menu() {
-	int n = 4; // для перехода по строкам меню
+	int n = 4; // РґР»СЏ РїРµСЂРµС…РѕРґР° РїРѕ СЃС‚СЂРѕРєР°Рј РјРµРЅСЋ
 	//////////
 	CLEAN
 		cout << "+-----------------------------------------------------------------------------------------+" << endl << "|";
 	cout.width(50);
-	cout << "Меню";
+	cout << "РњРµРЅСЋ";
 	cout.setf(ios::right);
 	cout.width(40);
 	cout << "|" << endl;
 	cout << "+-----------------------------------------------------------------------------------------+" << endl;
 	GotoY(n);
 	ConsoleTextColor(n);
-	cout << "1. Ввод данных о студенте с клавитуре;" << endl;
+	cout << "1. Р’РІРѕРґ РґР°РЅРЅС‹С… Рѕ СЃС‚СѓРґРµРЅС‚Рµ СЃ РєР»Р°РІРёС‚СѓСЂРµ;" << endl;
 	GotoY(n);
 	ConsoleTextColor(n);
-	cout << "2. Вывод данных о студентах;" << endl;
+	cout << "2. Р’С‹РІРѕРґ РґР°РЅРЅС‹С… Рѕ СЃС‚СѓРґРµРЅС‚Р°С…;" << endl;
 	GotoY(n);
 	ConsoleTextColor(n);
-	cout << "3. Извлечь из стека одного студента;" << endl;
+	cout << "3. РР·РІР»РµС‡СЊ РёР· СЃС‚РµРєР° РѕРґРЅРѕРіРѕ СЃС‚СѓРґРµРЅС‚Р°;" << endl;
 	GotoY(n);
 	ConsoleTextColor(n);
-	cout << "4. Отчистить стек;" << endl;
+	cout << "4. РћС‚С‡РёСЃС‚РёС‚СЊ СЃС‚РµРє;" << endl;
 	GotoY(n);
 	ConsoleTextColor(n);
-	cout << "5. Количество студентов в очереди" << endl;
+	cout << "5. РљРѕР»РёС‡РµСЃС‚РІРѕ СЃС‚СѓРґРµРЅС‚РѕРІ РІ РѕС‡РµСЂРµРґРё" << endl;
 	GotoY(n);
 	ConsoleTextColor(n);
-	cout << "6. Прочитать данные с файла" << endl;
+	cout << "6. РџСЂРѕС‡РёС‚Р°С‚СЊ РґР°РЅРЅС‹Рµ СЃ С„Р°Р№Р»Р°" << endl;
 	GotoY(n);
 	ConsoleTextColor(n);
-	cout << "7. Записать данные с файла" << endl;
+	cout << "7. Р—Р°РїРёСЃР°С‚СЊ РґР°РЅРЅС‹Рµ СЃ С„Р°Р№Р»Р°" << endl;
 
 	SetConsoleTextAttribute(hStdOut, FOREGROUND_RED | FOREGROUND_INTENSITY);
 }
 
-///////////// Вспомогательные функции
+///////////// Р’СЃРїРѕРјРѕРіР°С‚РµР»СЊРЅС‹Рµ С„СѓРЅРєС†РёРё
 
 
 static char* FindEndSymbol(char* str, int s) {
@@ -214,7 +214,7 @@ static bool FileExtension(char* str, int* s) {
 }
 static char* AddExtension(char* str) {
 	int i = 0;
-	if (FileExtension(str, &i) == true) { // стрираем всё что находится после '.' и её тоже 
+	if (FileExtension(str, &i) == true) { // СЃС‚СЂРёСЂР°РµРј РІСЃС‘ С‡С‚Рѕ РЅР°С…РѕРґРёС‚СЃСЏ РїРѕСЃР»Рµ '.' Рё РµС‘ С‚РѕР¶Рµ 
 		char* tmp = new char[i + 1];
 		for (int j = 0; j < i; j++) {
 			tmp[j] = str[j];
@@ -237,22 +237,22 @@ static char* AddExtension(char* str) {
 	str = tmp;
 	return str;
 }
-//////////////// основные функции
+//////////////// РѕСЃРЅРѕРІРЅС‹Рµ С„СѓРЅРєС†РёРё
 
 extern void CinInfoAboutStudent(Stack<STUDENT>& stackStudent) {
 	STUDENT undergraduate;
 	/// <summary>
 	/// /
 	/// </summary>
-	cout << "Введите фамилию " << stackStudent.GetSize() + 1 << "-ого студента: " << endl;
+	cout << "Р’РІРµРґРёС‚Рµ С„Р°РјРёР»РёСЋ " << stackStudent.GetSize() + 1 << "-РѕРіРѕ СЃС‚СѓРґРµРЅС‚Р°: " << endl;
 	undergraduate.LastName = CoutString();
-	cout << "Введите имя " << stackStudent.GetSize() + 1 << "-ого студента: " << endl;
+	cout << "Р’РІРµРґРёС‚Рµ РёРјСЏ " << stackStudent.GetSize() + 1 << "-РѕРіРѕ СЃС‚СѓРґРµРЅС‚Р°: " << endl;
 	undergraduate.FirstName = CoutString();
-	cout << "Введите отчество " << stackStudent.GetSize() + 1 << "-ого студента: " << endl;
+	cout << "Р’РІРµРґРёС‚Рµ РѕС‚С‡РµСЃС‚РІРѕ " << stackStudent.GetSize() + 1 << "-РѕРіРѕ СЃС‚СѓРґРµРЅС‚Р°: " << endl;
 	undergraduate.Surname = CoutString();
-	cout << "Введите группу " << stackStudent.GetSize() + 1 << "-ого студента: " << endl;
+	cout << "Р’РІРµРґРёС‚Рµ РіСЂСѓРїРїСѓ " << stackStudent.GetSize() + 1 << "-РѕРіРѕ СЃС‚СѓРґРµРЅС‚Р°: " << endl;
 	undergraduate.GroupeNumber = getValue(undergraduate.GroupeNumber);
-	cout << "Введите 5 оценок " << stackStudent.GetSize() + 1 << "-ого студента: " << endl;
+	cout << "Р’РІРµРґРёС‚Рµ 5 РѕС†РµРЅРѕРє " << stackStudent.GetSize() + 1 << "-РѕРіРѕ СЃС‚СѓРґРµРЅС‚Р°: " << endl;
 	for (register short unsigned i = 0; i < 5; i++) {
 		cout << "\t" << i + 1 << ": ";
 		undergraduate.Marks[i] = getValue(undergraduate.Marks[i]);
@@ -261,12 +261,12 @@ extern void CinInfoAboutStudent(Stack<STUDENT>& stackStudent) {
 }
 extern void PrintInfoAboutStudent(Stack<STUDENT>& stackStudent) {
 	if (stackStudent.GetSize() == 0) {
-		cout << "Сначало нужно ввести данные" << endl;
+		cout << "РЎРЅР°С‡Р°Р»Рѕ РЅСѓР¶РЅРѕ РІРІРµСЃС‚Рё РґР°РЅРЅС‹Рµ" << endl;
 		return;
 	}
 	InfoClassification();
 	if (stackStudent.IsEmpy()) {
-		cout << endl << "Стек пуст..." << endl;
+		cout << endl << "РЎС‚РµРє РїСѓСЃС‚..." << endl;
 	}
 	else stackStudent.PrintStack();
 
@@ -277,17 +277,17 @@ extern void WriteInfoInFile(Stack<STUDENT>& stackStudent) {
 
 	int CountStudent = stackStudent.GetSize();
 	if (CountStudent == 0) {
-		cout << "Сначало нужно ввести данные" << endl;
+		cout << "РЎРЅР°С‡Р°Р»Рѕ РЅСѓР¶РЅРѕ РІРІРµСЃС‚Рё РґР°РЅРЅС‹Рµ" << endl;
 		return;
 	}
-	cout << "Введите название файла(можно без расширения)" << endl;
+	cout << "Р’РІРµРґРёС‚Рµ РЅР°Р·РІР°РЅРёРµ С„Р°Р№Р»Р°(РјРѕР¶РЅРѕ Р±РµР· СЂР°СЃС€РёСЂРµРЅРёСЏ)" << endl;
 	char* str = CoutString();
 	str = AddExtension(str);
 	stackStudent.PrintInFile(str);
 
 }
 extern void ReadInfoFromFile(Stack<STUDENT>& stackStudent) {
-	cout << "Введите название файла(можно без расширения)" << endl;
+	cout << "Р’РІРµРґРёС‚Рµ РЅР°Р·РІР°РЅРёРµ С„Р°Р№Р»Р°(РјРѕР¶РЅРѕ Р±РµР· СЂР°СЃС€РёСЂРµРЅРёСЏ)" << endl;
 	char* str = CoutString();
 	str = AddExtension(str);
 	stackStudent.ReadFromFile(str);

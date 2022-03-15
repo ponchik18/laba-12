@@ -1,4 +1,4 @@
-#pragma once
+п»ї#pragma once
 #ifndef _LIBRARY_H_
 #define _LIBRARY_H_
 #include<iostream>
@@ -100,7 +100,7 @@ inline bool List<T>::DeleteRepeter(T d)
 	Node<T>* current = Head;
 	int index = 0;
 	if (!FindElement(d, current)) {
-		std::cout << std::endl << "' " << d << " ' не найдено данного элемента в листе";
+		std::cout << std::endl << "' " << d << " ' РЅРµ РЅР°Р№РґРµРЅРѕ РґР°РЅРЅРѕРіРѕ СЌР»РµРјРµРЅС‚Р° РІ Р»РёСЃС‚Рµ";
 		return false;
 	}
 	else {
@@ -125,7 +125,7 @@ inline bool List<T>::DeleteElements(T d)
 	}
 	Node<T>* current = Head;
 	if (!FindElement(d, current)) {
-		std::cout << std::endl << "' " << d << " ' не найдено данного элемента в листе";
+		std::cout << std::endl << "' " << d << " ' РЅРµ РЅР°Р№РґРµРЅРѕ РґР°РЅРЅРѕРіРѕ СЌР»РµРјРµРЅС‚Р° РІ Р»РёСЃС‚Рµ";
 		return false;
 	}
 	current = Head;

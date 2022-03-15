@@ -1,12 +1,12 @@
-//1.2.cpp           ФАЙЛ С ФУНКЦИЯМИ
+п»ї//1.2.cpp           Р¤РђР™Р› РЎ Р¤РЈРќРљР¦РРЇРњР
 #include"1.2.h"
 
 
-////////// Переменные
-//static STUDENT* undergraduate; // структура для хранения данных о студентах
-//static STUDENT* tmp; // структура для хранения временных данных(нужно для сортировки)
-//static int CountStudent = 0; // Количество студентов
-extern HANDLE hStdOut = GetStdHandle(STD_OUTPUT_HANDLE); // Получаем дескриптор консоли
+////////// РџРµСЂРµРјРµРЅРЅС‹Рµ
+//static STUDENT* undergraduate; // СЃС‚СЂСѓРєС‚СѓСЂР° РґР»СЏ С…СЂР°РЅРµРЅРёСЏ РґР°РЅРЅС‹С… Рѕ СЃС‚СѓРґРµРЅС‚Р°С…
+//static STUDENT* tmp; // СЃС‚СЂСѓРєС‚СѓСЂР° РґР»СЏ С…СЂР°РЅРµРЅРёСЏ РІСЂРµРјРµРЅРЅС‹С… РґР°РЅРЅС‹С…(РЅСѓР¶РЅРѕ РґР»СЏ СЃРѕСЂС‚РёСЂРѕРІРєРё)
+//static int CountStudent = 0; // РљРѕР»РёС‡РµСЃС‚РІРѕ СЃС‚СѓРґРµРЅС‚РѕРІ
+extern HANDLE hStdOut = GetStdHandle(STD_OUTPUT_HANDLE); // РџРѕР»СѓС‡Р°РµРј РґРµСЃРєСЂРёРїС‚РѕСЂ РєРѕРЅСЃРѕР»Рё
 static int ActiveMenu = 4;
 static int ActiveMenuSearch = 4;
 static char* CoutString() {
@@ -36,16 +36,16 @@ static char* CoutString() {
 static void InfoClassification() {
 	CLEAN
 		cout.width(30);
-	cout << "Фамилия и Инициалы";
+	cout << "Р¤Р°РјРёР»РёСЏ Рё РРЅРёС†РёР°Р»С‹";
 	cout.width(24);
-	cout << "Номер группы";
+	cout << "РќРѕРјРµСЂ РіСЂСѓРїРїС‹";
 	cout.width(29);
-	cout << "5 оценок студента" << endl;
+	cout << "5 РѕС†РµРЅРѕРє СЃС‚СѓРґРµРЅС‚Р°" << endl;
 	for (register int i = 0; i < 85; i++)
 		cout << "_";
 	cout << endl;
 }
-//////////// Функции для меню
+//////////// Р¤СѓРЅРєС†РёРё РґР»СЏ РјРµРЅСЋ
 
 static void GotoY(short y, short x = 25) {
 	SetConsoleCursorPosition(hStdOut, { x,y });
@@ -85,7 +85,7 @@ bool pointerSearch(List<STUDENT>& listStudent) {
 	char* str;
 	int n;
 	ch = _getch();
-	if (ch == -32) ch = _getch(); // Отлавливаем стрелочки
+	if (ch == -32) ch = _getch(); // РћС‚Р»Р°РІР»РёРІР°РµРј СЃС‚СЂРµР»РѕС‡РєРё
 	switch (ch)
 	{
 	case ESC:
@@ -102,42 +102,42 @@ bool pointerSearch(List<STUDENT>& listStudent) {
 		switch (ActiveMenuSearch) {
 		case 4:
 			CLEAN
-				cout << "Введите фамилию: ";
+				cout << "Р’РІРµРґРёС‚Рµ С„Р°РјРёР»РёСЋ: ";
 			str = CoutString();
 			CLEAN
 				InfoClassification();
 			if (!listStudent.SearchByLastName(str))
-				cout << "По данному параметру ничего не найдено!" << endl;
+				cout << "РџРѕ РґР°РЅРЅРѕРјСѓ РїР°СЂР°РјРµС‚СЂСѓ РЅРёС‡РµРіРѕ РЅРµ РЅР°Р№РґРµРЅРѕ!" << endl;
 			PAUSE
 				break;
 		case 5:
 			CLEAN
-				cout << "Введите отчество: ";
+				cout << "Р’РІРµРґРёС‚Рµ РѕС‚С‡РµСЃС‚РІРѕ: ";
 			n = getValue(n);
 			CLEAN
 				InfoClassification();
 			if (!listStudent.SearchByGroup(n))
-				cout << "По данному параметру ничего не найдено!" << endl;
+				cout << "РџРѕ РґР°РЅРЅРѕРјСѓ РїР°СЂР°РјРµС‚СЂСѓ РЅРёС‡РµРіРѕ РЅРµ РЅР°Р№РґРµРЅРѕ!" << endl;
 			PAUSE
 				break;
 		case 6:
 			CLEAN
-				cout << "Введите имя: ";
+				cout << "Р’РІРµРґРёС‚Рµ РёРјСЏ: ";
 			str = CoutString();
 			CLEAN
 				InfoClassification();
 			if (!listStudent.SearchByFirstName(str))
-				cout << "По данному параметру ничего не найдено!" << endl;
+				cout << "РџРѕ РґР°РЅРЅРѕРјСѓ РїР°СЂР°РјРµС‚СЂСѓ РЅРёС‡РµРіРѕ РЅРµ РЅР°Р№РґРµРЅРѕ!" << endl;
 			PAUSE
 				break;
 		case 7:
 			CLEAN
-				cout << "Введите отчество: ";
+				cout << "Р’РІРµРґРёС‚Рµ РѕС‚С‡РµСЃС‚РІРѕ: ";
 			str = CoutString();
 			CLEAN
 				InfoClassification();
 			if (!listStudent.SearchBySurname(str))
-				cout << "По данному параметру ничего не найдено!" << endl;
+				cout << "РџРѕ РґР°РЅРЅРѕРјСѓ РїР°СЂР°РјРµС‚СЂСѓ РЅРёС‡РµРіРѕ РЅРµ РЅР°Р№РґРµРЅРѕ!" << endl;
 			PAUSE
 				break;
 		}
@@ -149,34 +149,34 @@ bool pointerSearch(List<STUDENT>& listStudent) {
 	return true;
 }
 static void menuSearch() {
-	int n = 4; // для перехода по строкам меню
+	int n = 4; // РґР»СЏ РїРµСЂРµС…РѕРґР° РїРѕ СЃС‚СЂРѕРєР°Рј РјРµРЅСЋ
 	//////////
 	CLEAN
 		cout << "+-----------------------------------------------------------------------------------------+" << endl << "|";
 	cout.width(50);
-	cout << "Меню";
+	cout << "РњРµРЅСЋ";
 	cout.setf(ios::right);
 	cout.width(40);
 	cout << "|" << endl;
 	cout << "+-----------------------------------------------------------------------------------------+" << endl;
 	GotoY(n,40);
 	ConsoleTextColorSearch(n);
-	cout << "1. Фамилия;" << endl;
+	cout << "1. Р¤Р°РјРёР»РёСЏ;" << endl;
 	GotoY(n,40);
 	ConsoleTextColorSearch(n);
-	cout << "2. Группа;" << endl;
+	cout << "2. Р“СЂСѓРїРїР°;" << endl;
 	GotoY(n, 40);
 	ConsoleTextColorSearch(n);
-	cout << "3. Имя;" << endl;
+	cout << "3. РРјСЏ;" << endl;
 	GotoY(n, 40);
 	ConsoleTextColorSearch(n);
-	cout << "4. Отчество;" << endl;
+	cout << "4. РћС‚С‡РµСЃС‚РІРѕ;" << endl;
 	SetConsoleTextAttribute(hStdOut, FOREGROUND_RED | FOREGROUND_INTENSITY);
 }
 extern void pointer(List<STUDENT> &listStudent) {
 	char ch;
 	ch = _getch();
-	if (ch == -32) ch = _getch(); // Отлавливаем стрелочки
+	if (ch == -32) ch = _getch(); // РћС‚Р»Р°РІР»РёРІР°РµРј СЃС‚СЂРµР»РѕС‡РєРё
 	switch (ch)
 	{
 	case ESC:
@@ -226,7 +226,7 @@ extern void pointer(List<STUDENT> &listStudent) {
 				break;
 		case 10:
 			CLEAN
-				cout << "Количество созданных элементов: " << listStudent.getSize() << endl;
+				cout << "РљРѕР»РёС‡РµСЃС‚РІРѕ СЃРѕР·РґР°РЅРЅС‹С… СЌР»РµРјРµРЅС‚РѕРІ: " << listStudent.getSize() << endl;
 			PAUSE
 				break;
 		case 11:
@@ -242,44 +242,44 @@ extern void pointer(List<STUDENT> &listStudent) {
 	}
 }
 extern void menu() {
-	int n = 4; // для перехода по строкам меню
+	int n = 4; // РґР»СЏ РїРµСЂРµС…РѕРґР° РїРѕ СЃС‚СЂРѕРєР°Рј РјРµРЅСЋ
 	//////////
 	CLEAN
 		cout << "+-----------------------------------------------------------------------------------------+" << endl << "|";
 	cout.width(50);
-	cout << "Меню";
+	cout << "РњРµРЅСЋ";
 	cout.setf(ios::right);
 	cout.width(40);
 	cout << "|" << endl;
 	cout << "+-----------------------------------------------------------------------------------------+" << endl;
 	GotoY(n);
 	ConsoleTextColor(n);
-	cout << "1. Ввод данных о студенте с клавитуре;" << endl;
+	cout << "1. Р’РІРѕРґ РґР°РЅРЅС‹С… Рѕ СЃС‚СѓРґРµРЅС‚Рµ СЃ РєР»Р°РІРёС‚СѓСЂРµ;" << endl;
 	GotoY(n);
 	ConsoleTextColor(n);
-	cout << "2. Вывод данных о студентах;" << endl;
+	cout << "2. Р’С‹РІРѕРґ РґР°РЅРЅС‹С… Рѕ СЃС‚СѓРґРµРЅС‚Р°С…;" << endl;
 	GotoY(n);
 	ConsoleTextColor(n);
-	cout << "3. Удалить данные об студенте ;" << endl;
+	cout << "3. РЈРґР°Р»РёС‚СЊ РґР°РЅРЅС‹Рµ РѕР± СЃС‚СѓРґРµРЅС‚Рµ ;" << endl;
 	GotoY(n);
 	ConsoleTextColor(n);
-	cout << "4. Удалить данные об одном студенте ;" << endl;
+	cout << "4. РЈРґР°Р»РёС‚СЊ РґР°РЅРЅС‹Рµ РѕР± РѕРґРЅРѕРј СЃС‚СѓРґРµРЅС‚Рµ ;" << endl;
 	GotoY(n);
 	ConsoleTextColor(n);
-	cout << "5. Прочитать данные о студентах с файла;" << endl;
+	cout << "5. РџСЂРѕС‡РёС‚Р°С‚СЊ РґР°РЅРЅС‹Рµ Рѕ СЃС‚СѓРґРµРЅС‚Р°С… СЃ С„Р°Р№Р»Р°;" << endl;
 	GotoY(n);
 	ConsoleTextColor(n);
-	cout << "6. Записать данные о студентах в файл" << endl;
+	cout << "6. Р—Р°РїРёСЃР°С‚СЊ РґР°РЅРЅС‹Рµ Рѕ СЃС‚СѓРґРµРЅС‚Р°С… РІ С„Р°Р№Р»" << endl;
 	GotoY(n);
 	ConsoleTextColor(n);
-	cout << "7. Количество созданных элементов" << endl;
+	cout << "7. РљРѕР»РёС‡РµСЃС‚РІРѕ СЃРѕР·РґР°РЅРЅС‹С… СЌР»РµРјРµРЅС‚РѕРІ" << endl;
 	GotoY(n);
 	ConsoleTextColor(n);
-	cout << "8. Поиск по элементу" << endl;
+	cout << "8. РџРѕРёСЃРє РїРѕ СЌР»РµРјРµРЅС‚Сѓ" << endl;
 	SetConsoleTextAttribute(hStdOut, FOREGROUND_RED | FOREGROUND_INTENSITY);
 }
 
-///////////// Вспомогательные функции
+///////////// Р’СЃРїРѕРјРѕРіР°С‚РµР»СЊРЅС‹Рµ С„СѓРЅРєС†РёРё
 
 
 
@@ -319,7 +319,7 @@ static bool FileExtension(char* str, int* s) {
 }
 static char* AddExtension(char* str) {
 	int i = 0;
-	if (FileExtension(str, &i) == true) { // стрираем всё что находится после '.' и её тоже 
+	if (FileExtension(str, &i) == true) { // СЃС‚СЂРёСЂР°РµРј РІСЃС‘ С‡С‚Рѕ РЅР°С…РѕРґРёС‚СЃСЏ РїРѕСЃР»Рµ '.' Рё РµС‘ С‚РѕР¶Рµ 
 		char* tmp = new char[i + 1];
 		for (int j = 0; j < i; j++) {
 			tmp[j] = str[j];
@@ -342,24 +342,24 @@ static char* AddExtension(char* str) {
 	str = tmp;
 	return str;
 }
-//////////////// основные функции
+//////////////// РѕСЃРЅРѕРІРЅС‹Рµ С„СѓРЅРєС†РёРё
 
 extern void CinInfoAboutStudent(List<STUDENT>& listStudent) {
 	STUDENT undergraduate;
 	/// <summary>
 	/// /
 	/// </summary>
-	cout << "Введите фамилию " << listStudent.getSize()+1 << "-ого студента: " << endl;
+	cout << "Р’РІРµРґРёС‚Рµ С„Р°РјРёР»РёСЋ " << listStudent.getSize()+1 << "-РѕРіРѕ СЃС‚СѓРґРµРЅС‚Р°: " << endl;
 	undergraduate.LastName = CoutString();
-	cout << "Введите имя " << listStudent.getSize() + 1 << "-ого студента: " << endl;
+	cout << "Р’РІРµРґРёС‚Рµ РёРјСЏ " << listStudent.getSize() + 1 << "-РѕРіРѕ СЃС‚СѓРґРµРЅС‚Р°: " << endl;
 	undergraduate.FirstName = CoutString();
-	cout << "Введите отчество " << listStudent.getSize() + 1 << "-ого студента: " << endl;
+	cout << "Р’РІРµРґРёС‚Рµ РѕС‚С‡РµСЃС‚РІРѕ " << listStudent.getSize() + 1 << "-РѕРіРѕ СЃС‚СѓРґРµРЅС‚Р°: " << endl;
 	undergraduate.Surname = CoutString();
 
-	cout << "Введите группу " << listStudent.getSize() + 1 << "-ого студента: " << endl;
+	cout << "Р’РІРµРґРёС‚Рµ РіСЂСѓРїРїСѓ " << listStudent.getSize() + 1 << "-РѕРіРѕ СЃС‚СѓРґРµРЅС‚Р°: " << endl;
 	
 	undergraduate.GroupeNumber = getValue(undergraduate.GroupeNumber);
-	cout << "Введите 5 оценок " << listStudent.getSize() + 1 << "-ого студента: " << endl;
+	cout << "Р’РІРµРґРёС‚Рµ 5 РѕС†РµРЅРѕРє " << listStudent.getSize() + 1 << "-РѕРіРѕ СЃС‚СѓРґРµРЅС‚Р°: " << endl;
 	for (register short unsigned i = 0; i < 5; i++) {
 		cout << "\t" << i + 1 << ": ";
 		undergraduate.Marks[i] = getValue(undergraduate.Marks[i]);
@@ -368,7 +368,7 @@ extern void CinInfoAboutStudent(List<STUDENT>& listStudent) {
 }
 extern void PrintInfoAboutStudent(List<STUDENT>& listStudent) {
 	if (listStudent.getSize() == 0) {
-		cout << "Сначало нужно ввести данные" << endl;
+		cout << "РЎРЅР°С‡Р°Р»Рѕ РЅСѓР¶РЅРѕ РІРІРµСЃС‚Рё РґР°РЅРЅС‹Рµ" << endl;
 		return;
 	}
 	InfoClassification();
@@ -381,36 +381,36 @@ extern void PrintInfoAboutStudent(List<STUDENT>& listStudent) {
 extern void DeleteInfoAboutStedent(List<STUDENT>& listStudent) {
 
 	listStudent.Clear();
-	std::cout <<"Удаление завершено" << std::endl;
+	std::cout <<"РЈРґР°Р»РµРЅРёРµ Р·Р°РІРµСЂС€РµРЅРѕ" << std::endl;
 }
 
 extern void DeleteInfoAboutOneStudent(List<STUDENT>& listStudent) {
 	int n;
-	std::cout << "Введите индекс элемента, который хотите удалить: ";
+	std::cout << "Р’РІРµРґРёС‚Рµ РёРЅРґРµРєСЃ СЌР»РµРјРµРЅС‚Р°, РєРѕС‚РѕСЂС‹Р№ С…РѕС‚РёС‚Рµ СѓРґР°Р»РёС‚СЊ: ";
 	std::cin >> n;
 	ClEANCONSOLE
 	std::cout << std::endl;
 
 	if (listStudent.RemomeAt(n)) {
-		std::cout << "Удаление завершено" << std::endl;
+		std::cout << "РЈРґР°Р»РµРЅРёРµ Р·Р°РІРµСЂС€РµРЅРѕ" << std::endl;
 	}
 	else 
-		std::cout << "Удаление завершено c ошибкой..." << std::endl;
+		std::cout << "РЈРґР°Р»РµРЅРёРµ Р·Р°РІРµСЂС€РµРЅРѕ c РѕС€РёР±РєРѕР№..." << std::endl;
 }
 extern void WriteInfoInFile(List<STUDENT>& listStudent) {
 
 	int CountStudent = listStudent.getSize();
 	if (CountStudent == 0) {
-		cout << "Сначало нужно ввести данные" << endl;
+		cout << "РЎРЅР°С‡Р°Р»Рѕ РЅСѓР¶РЅРѕ РІРІРµСЃС‚Рё РґР°РЅРЅС‹Рµ" << endl;
 		return;
 	}
-	cout << "Введите название файла(можно без расширения)" << endl;
+	cout << "Р’РІРµРґРёС‚Рµ РЅР°Р·РІР°РЅРёРµ С„Р°Р№Р»Р°(РјРѕР¶РЅРѕ Р±РµР· СЂР°СЃС€РёСЂРµРЅРёСЏ)" << endl;
 	char* str = CoutString();
 	str = AddExtension(str);
 	FILE* out = fopen(str, "wb");
 
 	if (out == NULL) {
-		cout << "ФАЙЛ НЕ МОЖЕТ БЫТЬ ОТКРЫТ!!!" << endl;
+		cout << "Р¤РђР™Р› РќР• РњРћР–Р•Рў Р‘Р«РўР¬ РћРўРљР Р«Рў!!!" << endl;
 		exit(0);
 	}
 	fwrite(&CountStudent, sizeof(int), 1, out);
@@ -419,17 +419,17 @@ extern void WriteInfoInFile(List<STUDENT>& listStudent) {
 		undergraduate = listStudent[i];
 		undergraduate.PrintInFile(out);
 	}
-	cout << "Запись успешно завершена!" << endl;
+	cout << "Р—Р°РїРёСЃСЊ СѓСЃРїРµС€РЅРѕ Р·Р°РІРµСЂС€РµРЅР°!" << endl;
 	fclose(out);
 
 }
 extern void ReadInfoFromFile(List<STUDENT>& listStudent) {
-	cout << "Введите название файла(можно без расширения)" << endl;
+	cout << "Р’РІРµРґРёС‚Рµ РЅР°Р·РІР°РЅРёРµ С„Р°Р№Р»Р°(РјРѕР¶РЅРѕ Р±РµР· СЂР°СЃС€РёСЂРµРЅРёСЏ)" << endl;
 	char* str = CoutString();
 	str = AddExtension(str);
 	FILE* in = fopen(str, "rb");
 	if (in == NULL) {
-		cout << "ДАННЫЙ ФАЙЛ НЕ НАЙДЕН!!!" << endl;
+		cout << "Р”РђРќРќР«Р™ Р¤РђР™Р› РќР• РќРђР™Р”Р•Рќ!!!" << endl;
 		return;
 	}
 	STUDENT* undergraduate=new STUDENT;
@@ -439,7 +439,7 @@ extern void ReadInfoFromFile(List<STUDENT>& listStudent) {
 		undergraduate->ReadFromFile(in);
 		listStudent.InsertAlpabet(*undergraduate);
 	}
-	cout << "Чтение успешно завершено!" << endl;
+	cout << "Р§С‚РµРЅРёРµ СѓСЃРїРµС€РЅРѕ Р·Р°РІРµСЂС€РµРЅРѕ!" << endl;
 	fclose(in);
 	delete undergraduate;
 }

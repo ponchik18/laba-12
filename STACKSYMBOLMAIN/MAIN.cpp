@@ -1,14 +1,14 @@
-#include"Stack.h"
+п»ї#include"Stack.h"
 
 int main() {
 	setlocale(0, "RUS");
 
-	SetConsoleTextAttribute(hStdOut, FOREGROUND_RED | FOREGROUND_INTENSITY); //цвет текста основного
+	SetConsoleTextAttribute(hStdOut, FOREGROUND_RED | FOREGROUND_INTENSITY); //С†РІРµС‚ С‚РµРєСЃС‚Р° РѕСЃРЅРѕРІРЅРѕРіРѕ
 	SetConsoleOutputCP(1251);
 	SetConsoleCP(1251);
 	SetConsoleTitle(L"StackSymbol");
 
-	ConsoleCursorVisible(false, 100); //убираем курсор в консоли
+	ConsoleCursorVisible(false, 100); //СѓР±РёСЂР°РµРј РєСѓСЂСЃРѕСЂ РІ РєРѕРЅСЃРѕР»Рё
 	Stack str;
 	while (true)
 	{
